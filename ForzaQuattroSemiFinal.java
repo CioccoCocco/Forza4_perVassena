@@ -1,4 +1,4 @@
-class ForzaQuattroFinal {
+class ForzaQuattroSemiFinal {
     final static String nL = System.getProperty("line.separator");
 
     public final static void cls()  {
