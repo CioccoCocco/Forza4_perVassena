@@ -160,6 +160,7 @@ class Forza4 {
         return false;        
     }
     
+    //aggiungere che riceve variabile "colore" inidicante se è il giocatore 1 o 2
     public static int mossaGiocatore( int m[][], int colonna ) {
         int riga = disponibilitaColonna( m, colonna );
         
@@ -169,6 +170,7 @@ class Forza4 {
             return 0;
         }
         
+        //passare a controlloVincita la variabile colore anzichè 1
         if( controlloVincita( m, riga, colonna, 1 ) == true )   {
             return 2;
         }
@@ -185,6 +187,8 @@ class Forza4 {
             fillMtx(m);
             turno = -1;
             
+            //aggiungere selezione modalità
+            
             do {
                 turno++;
                 System.out.println("TURNO NUMERO " + turno);
@@ -196,6 +200,8 @@ class Forza4 {
                         colonna = Leggi.unInt();
                         controllo = mossaGiocatore(m, colonna);
                     }while( controllo == 0 );
+                    
+                    //tramite else if decidere se giocare contro altro giocatore o contro PC
                 } else {
                     System.out.println("TURNO NPC:");
                     controllo = mossaNPC( m, turno );
